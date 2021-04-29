@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Nav, NavLink, Bars, NavMenu } from "./NavBarElements";
 import Logo from "./assets/images/logo.png"
 
+//Import de hojas de estilos
+import "./assets/css/navbar.css";
+
 //Import de las diferentes páginas de navegación
 import Home from "./components/Home";
 import FirstGenList from "./components/FirstGenList";
@@ -13,7 +16,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="header">
+        <div className="navbar">
           <Nav>
             <NavLink to="/">
               <img src={Logo} alt="Logo" className="logo"></img>

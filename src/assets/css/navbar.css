@@ -1,0 +1,12 @@
+.navbar{
+    height: 200px;
+}
+
+.navbar img{
+    height: 80px;
+    width: 80x;
+}
+
+.navbar .navBarItem{
+    padding-top: 50px;
+}

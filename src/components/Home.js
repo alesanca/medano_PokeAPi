@@ -1,27 +1,36 @@
 import React from 'react';
-
 import axios from 'axios';
+
+import PokemonCard from "./PokemonCard";
 
 export default class Home extends React.Component {
   state = {
-    pokemons: []
+    url :'https://pokeapi.co/api/v2/pokemon/',
+    pokemons: null
   }
 
-  componentDidMount() {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/`)
-      .then(res => {
-        const pokemons = res.data;
-        console.log(pokemons); //Devuelve un array de objetos
-        this.setState({ pokemons });
-      })
+  async componentDidMount() {
+    const res = await axios.get(this.state.url);
+    this.setState({ pokemons : res.data['results']})
   }
 
   render() {
     return (
-      <div>
-        { this.state.pokemons.map(poke =>
-            <p>{poke.name} </p>)}
+      <>
+        {this.state.pokemons ? ( 
+          <div className="pokemonCard"> 
+          { this.state.pokemons.map(poke => 
+          <PokemonCard 
+            key={poke.name}
+            name={poke.name}
+            url={poke.url}
+          />
+      )}
       </div>
+      ) : (
+      <h1> Loading </h1>
+    )}
+      </>
     )
   }
 }

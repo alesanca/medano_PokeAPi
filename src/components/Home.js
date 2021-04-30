@@ -1,27 +1,29 @@
-import React from 'react';
+import React from "react";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default class Home extends React.Component {
   state = {
-    pokemons: []
-  }
+    pokemons: [],
+  };
 
   componentDidMount() {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/`)
-      .then(res => {
-        const pokemons = res.data;
-        console.log(pokemons); //Devuelve un array de objetos
-        this.setState({ pokemons });
-      })
+    axios.get(`https://pokeapi.co/api/v2/pokemon/`).then((res) => {
+      const pokemons = res.data;
+      console.log(pokemons); //Devuelve un array de objetos
+      this.setState({ pokemons });
+    });
   }
 
   render() {
     return (
       <div>
-        { this.state.pokemons.map(poke =>
-            <p>{poke.name} </p>)}
+        {this.state.pokemons.map((poke) => {
+          poke.map((a) => {
+            <p> {a.name} </p>
+          });
+        })}
       </div>
-    )
+    );
   }
 }

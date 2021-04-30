@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import PokemonCard from "./PokemonCard";
+import "../assets/css/card.css";
 
 export default class FirstGenList extends React.Component {
   state = {
@@ -16,7 +17,7 @@ export default class FirstGenList extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="card">
         {this.state.pokemons ? ( 
           <div className="pokemonCard"> 
           { this.state.pokemons.map(poke => 
@@ -30,7 +31,7 @@ export default class FirstGenList extends React.Component {
       ) : (
       <h1> Loading </h1>
     )}
-      </>
+      </div>
     )
   }
 }

@@ -1,8 +1,27 @@
-.card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      ". . . .";
-  }
+.card-item {
+  border: black solid 2px;
+  height: 150px;
+  width: 150px;
+  margin: 2px ;
+  float: left;
+  background-color: #ffff99;
+}
+
+
+.card-item .cardIndex{
+  text-align: left;
+  font-weight: bold;
+}
+
+
+.card-item .cardName{
+  text-align: center;
+  margin-top: -35px;
+}
+
+.card-item img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

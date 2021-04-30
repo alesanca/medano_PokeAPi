@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import FirstGenList from "./components/FirstGenList";
 import SecondGenList from "./components/SecondGenList";
 import ThirdGenList from "./components/ThirdGenList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -53,6 +54,8 @@ function App() {
           <Route path="/3gen" component={ThirdGenList} />
         </Switch>
       </Router>
+
+   
     </>
   );
 }

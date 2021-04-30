@@ -5,7 +5,7 @@ import PokemonCard from "./PokemonCard";
 
 export default class Home extends React.Component {
   state = {
-    url :'https://pokeapi.co/api/v2/pokemon/',
+    url :'https://pokeapi.co/api/v2/pokemon?limit=600',
     pokemons: null
   }
 

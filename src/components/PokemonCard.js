@@ -1,4 +1,5 @@
 import React , { Component } from 'react'
+import "../assets/css/card.css";
 
 class PokemonCard extends Component {
     state = {
@@ -21,10 +22,12 @@ class PokemonCard extends Component {
 
     render (){
         return (
-            <div className="card">
-                <h1 className="cardIndex">{this.state.index}</h1>
+            <div className="card-item">
+                <div>
+                    <p className="cardIndex">{this.state.index}</p>
+                    <p className="cardName">{this.state.name}</p>
+                </div>
                 <img src={this.state.image} alt="pokemon Image" />
-                <div className="cardTitle">{this.state.name}</div> 
             </div>
         )
     }

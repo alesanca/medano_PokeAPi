@@ -17,21 +17,21 @@ export default class FirstGenList extends React.Component {
 
   render() {
     return (
-      <div className="card">
-        {this.state.pokemons ? ( 
-          <div className="pokemonCard"> 
-          { this.state.pokemons.map(poke => 
-          <PokemonCard 
-            key={poke.name}
-            name={poke.name}
-            url={poke.url}
-          />
-      )}
+      <>
+          {this.state.pokemons ? ( 
+            <div className="pokemonCard"> 
+            { this.state.pokemons.map(poke => 
+            <PokemonCard 
+              key={poke.name}
+              name={poke.name}
+              url={poke.url}
+            />
+        )}
       </div>
       ) : (
       <h1> Loading </h1>
     )}
-      </div>
+    </>
     )
   }
 }

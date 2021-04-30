@@ -12,6 +12,7 @@ import FirstGenList from "./components/FirstGenList";
 import SecondGenList from "./components/SecondGenList";
 import ThirdGenList from "./components/ThirdGenList";
 import Footer from "./components/Footer";
+import SinglePokemon from "./components/singlePokemon";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             component={SecondGenList}
           />
           <Route path="/3gen" component={ThirdGenList} />
+          <Route path="/pokemonInformation" component={SinglePokemon}/>
         </Switch>
       </Router>
 

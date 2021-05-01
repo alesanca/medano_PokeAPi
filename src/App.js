@@ -44,7 +44,7 @@ function App() {
               <NavLink to="/3gen" className="navBarItem" activeStyle>
                 3º Gen
               </NavLink>
-              <SearchBar />
+              <SearchBar to="/pokemons/:value"/>
             </NavMenu>
           </Nav>
         </div>
@@ -57,7 +57,7 @@ function App() {
           />
           <Route path="/3gen" component={ThirdGenList} />
           <Route path="/pokemon/:index" component={SinglePokemon}/>
-          <Route path="/pokemon/fitered/:value" component={FilteredPokemon}/>
+          <Route path="/pokemons/:value" component={FilteredPokemon}/>
         </Switch>
       </Router>
       

@@ -53,7 +53,7 @@ function App() {
             component={SecondGenList}
           />
           <Route path="/3gen" component={ThirdGenList} />
-          <Route path="/pokemonInformation" component={SinglePokemon}/>
+          <Route path="/pokemon/:index" component={SinglePokemon}/>
         </Switch>
       </Router>
 

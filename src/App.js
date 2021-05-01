@@ -13,6 +13,8 @@ import SecondGenList from "./components/SecondGenList";
 import ThirdGenList from "./components/ThirdGenList";
 import Footer from "./components/Footer";
 import SinglePokemon from "./components/singlePokemon";
+import SearchBar from "./components/searchBar";
+import FilteredPokemon from "./components/FilteredPokemon";
 
 function App() {
   return (
@@ -42,6 +44,7 @@ function App() {
               <NavLink to="/3gen" className="navBarItem" activeStyle>
                 3º Gen
               </NavLink>
+              <SearchBar />
             </NavMenu>
           </Nav>
         </div>
@@ -54,9 +57,10 @@ function App() {
           />
           <Route path="/3gen" component={ThirdGenList} />
           <Route path="/pokemon/:index" component={SinglePokemon}/>
+          <Route path="/pokemon/fitered/:value" component={FilteredPokemon}/>
         </Switch>
       </Router>
-
+      
    
     </>
   );

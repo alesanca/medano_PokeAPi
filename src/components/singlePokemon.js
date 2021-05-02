@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import "../assets/css/pokeInfo.css";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 
 export default class SinglePokemon extends React.Component {
   state = {
@@ -42,8 +42,14 @@ export default class SinglePokemon extends React.Component {
           <p className="index">{this.state.index}</p>
           <p className="name">{this.state.name}</p>
         </div>
-          <img src={this.state.image} alt="Pokemon sprite" />
-        <p>{this.state.description}</p>
+        <div className="infoBox">
+          <img
+            src={this.state.image}
+            alt="Pokemon sprite"
+            className="infoImg"
+          />
+          <p className="description">{this.state.description}</p>
+        </div>
       </Box>
     );
   }

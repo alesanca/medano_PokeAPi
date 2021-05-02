@@ -31,3 +31,8 @@
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   grid-gap: 20px;
 }
+
+.buttonCard {
+  padding-bottom: 40px !important;
+  padding-left: 40px !important;
+}

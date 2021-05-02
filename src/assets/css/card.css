@@ -2,26 +2,32 @@
   border: black solid 2px;
   height: 150px;
   width: 150px;
-  margin: 2px ;
+  margin: 2px;
   float: left;
   background-color: #ffff99;
 }
 
-
-.card-item .cardIndex{
+.card-item .cardIndex {
   text-align: left;
   font-weight: bold;
 }
 
-
-.card-item .cardName{
+.card-item .cardName {
   text-align: center;
   margin-top: -35px;
 }
 
-.card-item img{
+.card-item img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.pokemonCards {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  grid-gap: 20px;
 }

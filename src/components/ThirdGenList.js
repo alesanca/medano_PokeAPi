@@ -18,7 +18,7 @@ export default class ThirdGenList extends React.Component {
     return (
       <>
         {this.state.pokemons ? ( 
-          <div > 
+          <div className="pokemonCards">
           { this.state.pokemons.map(poke => 
           <PokemonCard 
             key={poke.name}

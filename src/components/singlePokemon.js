@@ -1,39 +1,50 @@
 import axios from "axios";
 import React from "react";
+import "../assets/css/pokeInfo.css";
+import Box from '@material-ui/core/Box';
 
 export default class SinglePokemon extends React.Component {
   state = {
     name: "",
     index: "",
     url: "",
-    types: "",
     image: "",
+    description: "",
   };
 
   async componentDidMount() {
     const { index } = this.props.match.params;
 
     const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${index}/`;
+    const descriptionURL = `https://pokeapi.co/api/v2/pokemon-species/${index}/`;
 
     const res = await axios.get(pokeUrl);
     const name = res.data.name;
     const image = res.data.sprites.front_default;
-    const types = res.data.types.map((i) => i.type.name);
+    let description = "";
 
-    this.setState({ name, index, pokeUrl, types, image });
+    await axios.get(descriptionURL).then((res) => {
+      res.data.flavor_text_entries.some((flavor) => {
+        if (flavor.language.name === "en") {
+          description = flavor.flavor_text;
+          return description;
+        }
+      });
+    });
+
+    this.setState({ name, index, pokeUrl, image, description });
   }
 
   render() {
     return (
-      <div className="pokemonInfo">
+      <Box>
         <div className="topInfo">
-          <p>{this.state.index}</p>
-          <p>{this.state.name}</p>
+          <p className="index">{this.state.index}</p>
+          <p className="name">{this.state.name}</p>
         </div>
-        <div className="cardBody">
           <img src={this.state.image} alt="Pokemon sprite" />
-        </div>
-      </div>
+        <p>{this.state.description}</p>
+      </Box>
     );
   }
 }

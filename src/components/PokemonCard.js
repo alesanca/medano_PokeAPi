@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "../assets/css/card.css";
 import { Redirect } from "react-router";
 import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 
 class PokemonCard extends Component {
   state = {
@@ -44,13 +47,17 @@ class PokemonCard extends Component {
 
   render() {
     return (
-      <div className="card-item">
+      <Card>
         {this.renderRedirect()}
-        <div>
-          <p className="cardIndex">{this.state.index}</p>
-          <p className="cardName">{this.state.name}</p>
-        </div>
-        <img src={this.state.image} alt="pokemon Image" />
+        <CardContent>
+          <Typography color="textPrimary" gutterBottom>
+            {this.state.index}
+          </Typography>
+          <Typography color="textSecondary" gutterBottom>
+            {this.state.name}
+          </Typography>
+          <img src={this.state.image} alt="pokemon Image" />
+        </CardContent>
         <Button
           variant="contained"
           color="primary"
@@ -58,7 +65,7 @@ class PokemonCard extends Component {
         >
           Mostrar más
         </Button>
-      </div>
+      </Card>
     );
   }
 }

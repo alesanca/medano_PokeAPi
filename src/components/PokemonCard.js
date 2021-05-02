@@ -59,6 +59,7 @@ class PokemonCard extends Component {
           <img src={this.state.image} alt="pokemon Image" />
         </CardContent>
         <Button
+          classname="buttonCard"
           variant="contained"
           color="primary"
           onClick={() => this.setRedirect(`${this.state.index}`)}

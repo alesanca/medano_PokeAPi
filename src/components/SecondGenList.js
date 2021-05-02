@@ -18,7 +18,7 @@ export default class SecondGenList extends React.Component {
     return (
       <>
         {this.state.pokemons ? ( 
-          <div className="pokemonCard"> 
+          <div className="pokemonCards"> 
           { this.state.pokemons.map(poke => 
           <PokemonCard 
             key={poke.name}

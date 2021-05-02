@@ -1,36 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 import PokemonCard from "./PokemonCard";
+import "../assets/css/card.css";
 
-export default class SecondGenList extends React.Component {
-  state = {
-    url :'https://pokeapi.co/api/v2/pokemon?limit=100&offset=151',
-    pokemons: null
-  }
+const FirstGenList = () => {
+  const [currentState, setNewState] = useState({
+    url: "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151",
+    pokemons: null,
+  });
 
-  async componentDidMount() {
-    const res = await axios.get(this.state.url);
-    this.setState({ pokemons : res.data['results']})
-  }
+  useEffect(() => {
+    getApi();
+    async function getApi() {
+      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=151",); 
+      setNewState({ pokemons: res.data["results"] });
+    }
+  }, []); 
 
-  render() {
     return (
       <>
-        {this.state.pokemons ? ( 
-          <div className="pokemonCards"> 
-          { this.state.pokemons.map(poke => 
-          <PokemonCard 
-            key={poke.name}
-            name={poke.name}
-            url={poke.url}
-          />
-      )}
+          {currentState.pokemons ? ( 
+            <div className="pokemonCards"> 
+            { currentState.pokemons.map(poke => 
+            <PokemonCard 
+              key={poke.name}
+              name={poke.name}
+              url={poke.url}
+            />
+        )}
       </div>
       ) : (
       <h1> Loading </h1>
     )}
-      </>
+    </>
     )
   }
-}
+
+export default FirstGenList;
+

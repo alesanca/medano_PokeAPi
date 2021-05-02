@@ -60,7 +60,7 @@ function App() {
           <Route path="/pokemons/:value" component={FilteredPokemon}/>
         </Switch>
       </Router>
-      
+      <Footer />
    
     </>
   );

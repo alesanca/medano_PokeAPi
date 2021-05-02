@@ -12,7 +12,9 @@ const Home = () => {
   useEffect(() => {
     getApi();
     async function getApi() {
-      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=600"); //I tried to use currentState.url but I got an error
+      const res = await axios.get(
+        "https://pokeapi.co/api/v2/pokemon?limit=600"
+      ); //I tried to use currentState.url but I got an error
       setNewState({ pokemons: res.data["results"] });
     }
   }, []);

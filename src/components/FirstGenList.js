@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 import PokemonCard from "./PokemonCard";
 import "../assets/css/card.css";
 
-export default class FirstGenList extends React.Component {
-  state = {
-    url :'https://pokeapi.co/api/v2/pokemon?limit=151',
-    pokemons: null
-  }
+const FirstGenList = () => {
+  const [currentState, setNewState] = useState({
+    url: "https://pokeapi.co/api/v2/pokemon?limit=151",
+    pokemons: null,
+  });
 
-  async componentDidMount() {
-    const res = await axios.get(this.state.url);
-    this.setState({ pokemons : res.data['results']})
-  }
+  useEffect(() => {
+    getApi();
+    async function getApi() {
+      const res = await axios.get(currentState.url); //I dont get that error in this component, I don't why
+      setNewState({ pokemons: res.data["results"] });
+    }
+  }, []);
 
-  render() {
     return (
       <>
-          {this.state.pokemons ? ( 
+          {currentState.pokemons ? ( 
             <div className="pokemonCards"> 
-            { this.state.pokemons.map(poke => 
+            { currentState.pokemons.map(poke => 
             <PokemonCard 
               key={poke.name}
               name={poke.name}
@@ -34,5 +36,6 @@ export default class FirstGenList extends React.Component {
     </>
     )
   }
-}
+
+export default FirstGenList;
 

@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 
 export default class FilteredPokemon extends React.Component {
   state = {
-    url: "https://pokeapi.co/api/v2/pokemon?limit=50",
+    url: "https://pokeapi.co/api/v2/pokemon?limit=600",
     pokemons: [],
   };
 
@@ -21,7 +21,7 @@ export default class FilteredPokemon extends React.Component {
     return (
       <>
         {this.state.pokemons.length ? (
-          <div className="pokemonCard">
+          <div className="pokemonCards">
             {this.state.pokemons.map((poke) => (
               <PokemonCard key={poke.name} name={poke.name} url={poke.url} />
             ))}

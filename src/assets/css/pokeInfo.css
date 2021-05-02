@@ -1,0 +1,18 @@
+img{
+    margin-left: 40%;
+    height: 150px;
+}
+
+.topInfo .name{
+    float: right;
+    margin-top: -35px;
+    margin-right: 10%;
+}
+
+.topInfo .index{
+    margin-left: 10%;
+}
+
+.topInfo{
+    border: 1px black solid;
+}

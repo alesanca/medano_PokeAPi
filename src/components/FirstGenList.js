@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 import PokemonCard from "./PokemonCard";
 import "../assets/css/card.css";
@@ -18,24 +18,19 @@ const FirstGenList = () => {
     }
   }, []);
 
-    return (
-      <>
-          {currentState.pokemons ? ( 
-            <div className="pokemonCards"> 
-            { currentState.pokemons.map(poke => 
-            <PokemonCard 
-              key={poke.name}
-              name={poke.name}
-              url={poke.url}
-            />
-        )}
-      </div>
+  return (
+    <>
+      {currentState.pokemons ? (
+        <div className="pokemonCards">
+          {currentState.pokemons.map((poke) => (
+            <PokemonCard key={poke.name} name={poke.name} url={poke.url} />
+          ))}
+        </div>
       ) : (
-      <h1> Loading </h1>
-    )}
+        <h1> Loading </h1>
+      )}
     </>
-    )
-  }
+  );
+};
 
 export default FirstGenList;
-

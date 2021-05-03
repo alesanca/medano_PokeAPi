@@ -2,9 +2,16 @@
   background-color: #42abc2;
   height: 90px;
   text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer p {
   padding-top: 30px;
   font-weight: bold;
+}
+
+#MuiBox-root-2 {
+  margin-bottom: 20%;
 }
